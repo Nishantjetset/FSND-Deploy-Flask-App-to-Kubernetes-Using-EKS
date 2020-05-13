@@ -13,7 +13,7 @@ phases:
       - export PATH=$PWD/:$PATH
       - apt-get update && apt-get -y install jq python3-pip python3-dev && pip3 install --upgrade awscli
       # Configure kubectl (I do not know if it is mandatory or not)..
-      - aws eks --region us-east-2 update-kubeconfig --name simple-jwt-api
+      #- aws eks --region us-east-2 update-kubeconfig --name simple-jwt-api
   pre_build:
       commands:
         - TAG="$REPOSITORY_NAME.$REPOSITORY_BRANCH.$ENVIRONMENT_NAME.$(date +%Y-%m-%d.%H.%M.%S).$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | head -c 8)"
